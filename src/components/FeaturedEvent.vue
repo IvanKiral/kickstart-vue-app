@@ -60,7 +60,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import FeaturedComponentBase from './FeaturedComponentBase.vue'
-import type { Event } from '../model'
+import type { EventType } from '../model'
 import { formatDate } from '../utils/date'
 import { transformToPortableText } from '@kontent-ai/rich-text-resolver'
 import { defaultPortableRichTextResolvers } from '../utils/richtext'
@@ -68,7 +68,7 @@ import type { Replace } from '../utils/types'
 import { PortableText } from '@portabletext/vue'
 
 type Props = {
-  event: Replace<Event, { elements: Partial<Event['elements']> }>
+  event: Replace<EventType, { elements: Partial<EventType['elements']> }>
 }
 
 const props = defineProps<Props>()

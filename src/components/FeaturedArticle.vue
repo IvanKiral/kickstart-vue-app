@@ -36,11 +36,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import FeaturedComponentBase from './FeaturedComponentBase.vue'
-import type { Article } from '../model'
+import type { ArticleType } from '../model'
 import type { Replace } from '../utils/types'
 
 type Props = {
-  article: Replace<Article, { elements: Partial<Article['elements']> }>
+  article: Replace<ArticleType, { elements: Partial<ArticleType['elements']> }>
 }
 
 const props = defineProps<Props>()

@@ -39,7 +39,7 @@ import { DeliveryError } from '@kontent-ai/delivery-sdk'
 import HeroImage from '../components/HeroImage.vue'
 import PageContent from '../components/PageContent.vue'
 import PageSection from '../components/PageSection.vue'
-import type { LandingPage } from '../model'
+import type { LandingPageType } from '../model'
 import { createClient } from '../utils/client'
 import { useQuery } from '@tanstack/vue-query'
 import { useAppStore } from '../stores/app'
@@ -59,7 +59,7 @@ const { data: landingPageData } = useQuery({
         .type('landing_page')
         .limitParameter(1)
         .toPromise()
-      return res.data.items[0] as Replace<LandingPage, { elements: Partial<LandingPage['elements']> }> ?? null
+      return res.data.items[0] as Replace<LandingPageType, { elements: Partial<LandingPageType['elements']> }> ?? null
     } catch (err) {
       if (err instanceof DeliveryError) {
         return null

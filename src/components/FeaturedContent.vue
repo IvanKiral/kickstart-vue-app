@@ -24,18 +24,18 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { isArticle, isEvent, type LandingPage } from '../model'
+import { isArticleType, isEventType, type LandingPageType } from '../model'
 import PageSection from './PageSection.vue'
 import FeaturedArticle from './FeaturedArticle.vue'
 import FeaturedEvent from './FeaturedEvent.vue'
 import Divider from './Divider.vue'
 
 type Props = {
-  featuredContent: LandingPage['elements']['featured_content']
+  featuredContent: LandingPageType['elements']['featured_content']
 }
 
 const props = defineProps<Props>()
 
-const featuredArticle = computed(() => props.featuredContent.linkedItems.find(isArticle))
-const featuredEvent = computed(() => props.featuredContent.linkedItems.find(isEvent))
+const featuredArticle = computed(() => props.featuredContent.linkedItems.find(isArticleType))
+const featuredEvent = computed(() => props.featuredContent.linkedItems.find(isEventType))
 </script>

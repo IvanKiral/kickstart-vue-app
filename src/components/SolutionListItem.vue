@@ -15,17 +15,17 @@
 import { ref, onMounted } from 'vue'
 import { useAppStore } from '../stores/app'
 import { createClient } from '../utils/client'
-import type { Solution } from '../model/content-types/solution'
+import type { SolutionType } from '../model'
 import { DeliveryError } from '@kontent-ai/delivery-sdk'
 import SolutionListItemComponent from './SolutionListItemComponent.vue'
 
 const appStore = useAppStore()
-const solutions = ref<ReadonlyArray<Solution> | null>(null)
+const solutions = ref<ReadonlyArray<SolutionType> | null>(null)
 
 onMounted(async () => {
   try {
     const res = await createClient(appStore.environmentId, appStore.apiKey)
-      .items<Solution>()
+      .items<SolutionType>()
       .type('solution')
       .toPromise()
     solutions.value = res.data.items

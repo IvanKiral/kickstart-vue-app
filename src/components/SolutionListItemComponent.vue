@@ -40,11 +40,11 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { Solution } from '../model/content-types/solution'
+import type { SolutionType } from '../model'
 import type { Replace } from '../utils/types'
 
 type Props = {
-  solution: Replace<Solution, { elements: Partial<Solution['elements']> }>
+  solution: Replace<SolutionType, { elements: Partial<SolutionType['elements']> }>
 }
 
 const props = defineProps<Props>()

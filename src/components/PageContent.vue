@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { computed, h } from 'vue'
-import type { LandingPage } from '../model'
+import type { LandingPageType } from '../model'
 import Video from './Video.vue'
 import { transformToPortableText, PortableTextComponentOrItem } from '@kontent-ai/rich-text-resolver'
 import { defaultPortableRichTextResolvers } from '../utils/richtext'
@@ -17,7 +17,7 @@ import { PortableText } from '@portabletext/vue'
 import type { PortableTextComponents } from '@portabletext/vue'
 
 type Props = {
-  body: LandingPage['elements']['body_copy']
+  body: LandingPageType['elements']['body_copy']
 }
 
 const props = defineProps<Props>()
